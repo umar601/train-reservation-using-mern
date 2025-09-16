@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+<body>
+
+
+    <div style="background-color: red; width: 100%; height: 70px; display: flex; justify-content: space-evenly;">
+
+        <h5>trainName</h5>
+        <h5>trainNumber</h5>
+        <h5>Day</h5>
+        <h5>Date</h5>
+        <h5>arriavl Time</h5>
+        <h5>depature Time</h5>
+        <h5>depature Station</h5>
+        <h5>arrival Sataion</h5>
+        <h5>fare</h5>
+        <h5>status</h5>
+        <h5>duration</h5>
+        <h5>actions</h5>
+    </div >
+    <% for(train of allTrains) { %>
+
+        <div style="background-color: red; width: 100%; height: 70px; display: flex; justify-content: space-evenly;" >
+            <p><%=train.name%></p>
+            <p><%=train.trainNumber%></p>
+            <p><%=train.day%></p>
+            <p><%=train.date.toString().split(" ").splice(1,3).join(" ")%></p>
+            <p><%=train.departureTime%></p>
+            <p><%=train.arrivalTime%></p>
+            <p><%=train.departureStation%></p>
+            <p><%=train.arrivalStation%></p>  
+            <p><%=train.fare%></p>
+            <p><%=train.status%></p>
+            <p><%=train.duration%></p> 
+            <a href="http://localhost:8080/home/booking<%= train._id %>">Book ticket</a>
+             
+
+        </div>
+      
+    <% } %>
+    
+</body>
+</html>
