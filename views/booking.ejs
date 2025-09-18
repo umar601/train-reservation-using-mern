@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+</head>
+<body>
+
+    <h1>Enter Booking details</h1>
+
+    <h1>Booking ticket for train from <%=trainDetail.departureStation %> to <%=trainDetail.arrivalStation %></h1>
+    <h1>Depaturing at <%= trainDetail.departureTime %> and reaching at <%= trainDetail.arrivalTime %> on <%=trainDetail.date.toString().split(" ").splice(1,3).join(" ")%></h1>
+
+    <form action="http://localhost:8080/home/booking/ticket/<%= trainDetail._id %>" method="Post">
+        <input type="text" placeholder="Enter the number of persons" name="persons" required>
+        <button type="submit">Print ticket</button>
+    </form>
+    
+</body>
+</html>

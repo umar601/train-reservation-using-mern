@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing ticket</title>
+</head>
+<body>
+    <h1>Train name <%= trainDetail.name %></h1>
+    <h1>Train number <%= trainDetail.trainNumber %></h1>
+    <h1>Train Status <%= trainDetail.status %></h1>
+    <h1>Duration <%= trainDetail.duration %></h1>
+    <h1>Booking ticket for train from <%=trainDetail.departureStation %> to <%=trainDetail.arrivalStation %></h1>
+    <h1>Depaturing at <%= trainDetail.departureTime %> and reaching at <%= trainDetail.arrivalTime %> on <%=trainDetail.date.toString().split(" ").splice(1,3).join(" ")%></h1>
+    <h1>Persons <%= persons %></h1>
+    <h1>fare <%= trainDetail.fare*persons %></h1>
+    <button onclick="window.print()">Print Ticket </button>
+    
+</body>
+</html>

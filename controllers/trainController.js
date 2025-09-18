@@ -18,8 +18,32 @@ async function handlerToBookTicket(req,res) {
 
     let { id } = req.params;
 
+    let trainDetail = await trainModel.findById(id);
+
+    // console.log(trainDetail);
+
+    res.render("booking.ejs",{trainDetail});
+
     
     
 }
 
-module.exports = {handlerToGetAllTrains};
+
+async function handlerToPrintTicket(req,res) {
+
+    let { persons } = req.body;
+
+    let { id } = req.params;
+
+    let trainDetail = await trainModel.findById(id);
+
+
+    res.render("printTicket.ejs",{trainDetail,persons});
+
+    
+    
+}
+
+
+
+module.exports = {handlerToGetAllTrains,handlerToBookTicket,handlerToPrintTicket};
